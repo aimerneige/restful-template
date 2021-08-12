@@ -11,7 +11,7 @@ type User struct {
 	Super    bool
 }
 
-func (u User) ToDt() (dto UserDto) {
+func (u User) ToDto() (dto UserDto) {
 	dto.ID = u.ID
 	dto.Name = u.Name
 	dto.Email = u.Email
