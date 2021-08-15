@@ -17,7 +17,7 @@ func main() {
 
 	r.MaxMultipartMemory = 2 << 20
 
-	r = route.RouteCollection(r)
+	r = route.AllRouteCollection(r)
 
 	port := viper.GetString("common.port")
 	if port != "" {
