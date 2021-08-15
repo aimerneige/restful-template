@@ -36,16 +36,8 @@ func ReleaseToken(user models.User, tokenExpireDuration time.Duration) (string, 
 
 // ParseToken parse jwt token
 func ParseToken(tokenString string) (*jwt.Token, *Claims, error) {
-	// token, err = jwt.ParseWithClaims(tokenString, claims, func(t *jwt.Token) (interface{}, error) {
-	// 	return jwtKey, nil
-	// })
-	// return
-
 	claims := &Claims{}
-	var token *jwt.Token
-	var err error
-	// 解码
-	token, err = jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (i interface{}, err error) {
+	token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (i interface{}, err error) {
 		return jwtKey, nil
 	})
 
