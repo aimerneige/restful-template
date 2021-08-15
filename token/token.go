@@ -19,7 +19,7 @@ func ReleaseToken(user models.User, tokenExpireDuration time.Duration) (string, 
 	currentTime := time.Now()
 	expirationTime := currentTime.Add(tokenExpireDuration)
 
-	claims := &models.Claims{
+	claims := &Claims{
 		UserID: user.ID,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(),
@@ -35,13 +35,13 @@ func ReleaseToken(user models.User, tokenExpireDuration time.Duration) (string, 
 }
 
 // ParseToken parse jwt token
-func ParseToken(tokenString string) (*jwt.Token, *models.Claims, error) {
+func ParseToken(tokenString string) (*jwt.Token, *Claims, error) {
 	// token, err = jwt.ParseWithClaims(tokenString, claims, func(t *jwt.Token) (interface{}, error) {
 	// 	return jwtKey, nil
 	// })
 	// return
 
-	claims := &models.Claims{}
+	claims := &Claims{}
 	var token *jwt.Token
 	var err error
 	// 解码
