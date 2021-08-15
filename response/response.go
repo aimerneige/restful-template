@@ -19,6 +19,11 @@ func OK(c *gin.Context, data interface{}, msg string) {
 	StatusCode(c, http.StatusOK, data, msg)
 }
 
+// Created 201
+func Created(c *gin.Context, data interface{}, msg string) {
+	StatusCode(c, http.StatusCreated, data, msg)
+}
+
 // NonAuthoritativeInfo 203
 func NonAuthoritativeInfo(c *gin.Context, data interface{}, msg string) {
 	StatusCode(c, http.StatusNonAuthoritativeInfo, data, msg)
