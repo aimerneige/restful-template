@@ -10,6 +10,16 @@ type Article struct {
 	Likes   uint
 }
 
+type ArticleDto struct {
+	ID       uint   `json:"id"`
+	CreateAt string `json:"create"`
+	UpdateAt string `json:"update"`
+	UserID   uint   `json:"userid"`
+	Title    string `json:"title"`
+	Content  string `json:"content"`
+	Likes    uint   `json:"likes"`
+}
+
 func (a Article) ToDto() (dto ArticleDto) {
 	timeTemplate := "2006-01-02 15:04"
 

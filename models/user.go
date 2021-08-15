@@ -11,6 +11,15 @@ type User struct {
 	Super    bool
 }
 
+type UserDto struct {
+	ID       uint   `json:"id"`
+	Name     string `json:"name"`
+	Email    string `json:"email"`
+	Phone    string `json:"phone"`
+	Password string `json:"password"`
+	Super    bool   `json:"super"`
+}
+
 func (u User) ToDto() (dto UserDto) {
 	dto.ID = u.ID
 	dto.Name = u.Name
