@@ -31,3 +31,6 @@ config/config.json
 
 ### target binary ###
 restful-template
+
+### release binary ###
+release/*
