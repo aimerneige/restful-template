@@ -1,8 +1,6 @@
 # restful-template
 
-## about
-
-todo
+DEPRECATED
 
 ## thanks
 
